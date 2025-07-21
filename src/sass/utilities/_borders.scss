@@ -1,0 +1,29 @@
+@use "../abstracts" as *;
+
+@each $color, $shade-map in $active-theme {
+  @each $shade, $value in $shade-map {
+    .border-#{$color}-#{$shade} {
+      border: 1px solid var(--#{$color}-#{$shade});
+    }
+    .border-top-#{$color}-#{$shade} {
+      border-top-color: var(--#{$color}-#{$shade});
+      border-top-width: 1px;
+      border-top-style: solid;
+    }
+    .border-right-#{$color}-#{$shade} {
+      border-right-color: var(--#{$color}-#{$shade});
+      border-right-width: 1px;
+      border-right-style: solid;
+    }
+    .border-bottom-#{$color}-#{$shade} {
+      border-bottom-color: var(--#{$color}-#{$shade});
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+    }
+    .border-left-#{$color}-#{$shade} {
+      border-left-color: var(--#{$color}-#{$shade});
+      border-left-width: 1px;
+      border-left-style: solid;
+    }
+  }
+}

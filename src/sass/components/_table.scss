@@ -1,0 +1,42 @@
+@use "../abstracts/" as *;
+
+.table {
+  min-width: $table-min-width;
+  text-indent: $table-text-indent;
+  border-collapse: $table-border-collapse;
+  border-spacing: $table-border-spacing;
+
+  &__caption {
+    color: $table-caption-color;
+    text-align: $table-caption-text-align;
+    font-size: $table-caption-font-size;
+    font-weight: $table-caption-font-weight;
+    line-height: $table-caption-line-height;
+    margin-bottom: $table-caption-margin-bottom;
+
+    @if not($table-caption-show) {
+      display: none;
+    }
+  }
+
+  &__th {
+    background-color: $table-thead-background;
+    padding-block: $table-th-block-padding;
+    color: $table-th-color;
+    line-height: $table-th-line-height;
+  }
+
+  &__td {
+    padding-block: $table-td-block-padding;
+    color: $table-td-color;
+    line-height: $table-td-line-height;
+    background-color: $table-background;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: $table-link-font-size;
+  }
+}

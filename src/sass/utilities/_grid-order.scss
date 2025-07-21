@@ -1,0 +1,10 @@
+@use "../abstracts/" as *;
+
+// Generate .order--breakpoint--reverse classes
+@each $name, $value in $breakpoints {
+  .order-#{$name}--reverse {
+    @include max($name) {
+      order: -1;
+    }
+  }
+}

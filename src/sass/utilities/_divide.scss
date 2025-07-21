@@ -1,0 +1,5 @@
+@use "../abstracts/" as *;
+
+:where(.divide-block > *) {
+  border-top: 1px solid $border-color;
+}

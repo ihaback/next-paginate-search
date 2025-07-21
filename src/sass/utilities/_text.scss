@@ -1,0 +1,13 @@
+@use "../abstracts/" as *;
+
+.fs-small {
+  font-size: $font-size-small;
+}
+
+.fs-medium {
+  font-size: $font-size-medium;
+}
+
+.fs-large {
+  font-size: $font-size-large;
+}
