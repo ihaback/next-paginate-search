@@ -31,13 +31,21 @@ export default async function Home({
     currentSearchParams.set("page", `${page}`);
   }
 
+  const paginateMesssage = `Showing ${(page - 1) * perPage + 1} to ${Math.min(
+    page * perPage,
+    totalUsers
+  )} of ${totalUsers} users`;
+
   return (
     <main className="padding-block-12">
+      <h1 className="visually-hidden" id="page-header">
+        Users table with search and paginagation fuctionality
+      </h1>
       <div
         className="container flex justify-start align-items-center"
         data-type="wide"
       >
-        <SearchInput search={search} />
+        <SearchInput search={search} page={page} totalPages={totalPages} />
       </div>
       <div className="container flex margin-block-start-4" data-type="wide">
         <div className="inline-block min-width-full">
@@ -48,10 +56,8 @@ export default async function Home({
       </div>
       <div className="container margin-block-start-4" data-type="wide">
         <div className="flex-group flex-group--no-wrap justify-between min-width-full align-items-center">
-          <p className="font-small">
-            Showing <span>{(page - 1) * perPage + 1}</span> to{" "}
-            <span>{Math.min(page * perPage, totalUsers)}</span> of{" "}
-            <span>{totalUsers}</span> users
+          <p className="font-small" aria-live="polite">
+            {paginateMesssage}
           </p>
           <div className="inline-flex gap-2">
             <PreviousPage

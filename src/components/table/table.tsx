@@ -12,7 +12,7 @@ interface UserTableProps {
 
 export function Table({ users }: UserTableProps) {
   return (
-    <table className="table">
+    <table className="table" aria-labelledby="page-header">
       <caption className="table__caption">
         A table of users woth id, name and email columns
       </caption>
@@ -21,24 +21,28 @@ export function Table({ users }: UserTableProps) {
           <th
             className="table__th text-left padding-inline-start-6 padding-inline-end-3 fs-small fw-semi-bold width-8"
             scope="col"
+            role="columnheader"
           >
             ID
           </th>
           <th
             className="table__th text-left padding-inline-start-6 padding-inline-end-3 fs-small fw-semi-bold width-15"
             scope="col"
+            role="columnheader"
           >
             Name
           </th>
           <th
             className="table__th text-left padding-inline-start-6 padding-inline-end-3 fs-small fw-semi-bold width-13 width-small-15 width-medium-17"
             scope="col"
+            role="columnheader"
           >
             Email
           </th>
           <th
             className="table__th relative padding-inline-start-6 padding-inline-end-3"
             scope="col"
+            role="columnheader"
           >
             <span className="visually-hidden">Edit</span>
           </th>
@@ -58,6 +62,9 @@ export function Table({ users }: UserTableProps) {
             </td>
             <td className="table__td no-wrap padding-inline-start-6 padding-inline-end-3 relative text-right fs-small font-medium">
               <a href="#" className="table__link">
+                <span className="visually-hidden">
+                  Edit user row, not implemented yet
+                </span>
                 Edit
               </a>
             </td>

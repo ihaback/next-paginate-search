@@ -14,6 +14,7 @@
   border: $button-border;
   border-radius: $button-border-radius;
   transition: 275ms ease;
+  outline: none;
 
   &[data-type="accent"] {
     background-color: $button-accent-background;

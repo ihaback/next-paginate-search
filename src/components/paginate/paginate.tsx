@@ -16,7 +16,12 @@ export function PreviousPage({
   }
 
   return page > 1 ? (
-    <Link href={`/?${newSearchParams}`} className="button" data-type="primary">
+    <Link
+      href={`/?${newSearchParams}`}
+      className="button"
+      data-type="primary"
+      aria-label="Show 10 previous results"
+    >
       Previous
     </Link>
   ) : (
@@ -40,7 +45,12 @@ export function NextPage({
   newSearchParams.set("page", `${page + 1}`);
 
   return page < totalPages ? (
-    <Link href={`/?${newSearchParams}`} className="button" data-type="primary">
+    <Link
+      href={`/?${newSearchParams}`}
+      className="button"
+      data-type="primary"
+      aria-label="Show 10 next results"
+    >
       Next
     </Link>
   ) : (
